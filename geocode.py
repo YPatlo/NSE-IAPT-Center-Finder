@@ -1,8 +1,9 @@
+import os
 from geopy.geocoders import GoogleV3
 from geopy.exc import GeocoderTimedOut, GeocoderServiceError
 
 # Replace YOUR_API_KEY with your actual Google Maps API key
-geolocator = GoogleV3(api_key="YOUR_API_KEY", timeout=10)
+geolocator = GoogleV3(api_key=os.getenv("API_KEY"), timeout=10)
 
 def geocode_address(address: str):
     if not address or address.strip() == "":

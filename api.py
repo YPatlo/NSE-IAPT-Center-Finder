@@ -1,4 +1,3 @@
-# api.py
 import requests
 from models import Centre
 
