@@ -128,7 +128,7 @@ class CentreFinderApp(tk.Tk):
         if not user_addr:
             messagebox.showerror("Error", "Please enter your address.")
             return
-        # Geocode all centres if not already done
+        # Geocode all centres 
         state_name = self.states[self.state_id]["state_name"]
         district_name = self.district["DistrictName"]
         city = self.city
@@ -164,7 +164,6 @@ class CentreFinderApp(tk.Tk):
                 self.results_text.insert(tk.END, f"  Name: {getattr(c, 'name', 'N/A')}\n")
                 self.results_text.insert(tk.END, f"  Address: {getattr(c, 'address', 'N/A')}\n")
                 self.results_text.insert(tk.END, f"  Coordinator: {getattr(c, 'coordinator_name', 'N/A')}\n")
-                self.results_text.insert(tk.END, f"  Subject: {getattr(c, 'subject', 'N/A')}\n")
                 self.results_text.insert(tk.END, f"  Distance: {dist:.2f} km\n")
         self.results_text.config(state="disabled")
 
